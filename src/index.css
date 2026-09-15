@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  /* Exact extracted palette directly from KyZee Solars logo pixels */
+  --kyzee-orange: #F58220;
+  --kyzee-orange-light: #FFA033;
+  --kyzee-orange-dark: #D96B00;
+  --kyzee-navy: #162250;
+  --kyzee-navy-deep: #0D1432;
+  --kyzee-navy-text: #283A7C;
+  --kyzee-black: #000000;
+  --kyzee-surface: #0a0e14;
+  --kyzee-green: #10B981;
+  --kyzee-green-light: #00E599;
+}
+
+@layer base {
+  body {
+    background-color: #000000;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  h1, h2, h3, .font-heading {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom glowing pulse and energy beam animations */
+@keyframes energyFlow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes rayBurst {
+  0%, 100% {
+    opacity: 0.6;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(3deg);
+  }
+}
+
+.animate-energy-flow {
+  animation: energyFlow 2.5s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-ray-burst {
+  animation: rayBurst 8s ease-in-out infinite;
+}
+
+/* Glassmorphism custom styling aligned with extracted midnight solar black & navy */
+.glass-panel {
+  background: rgba(13, 20, 36, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 130, 32, 0.15);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 34, 60, 0.85);
+  border-color: rgba(245, 130, 32, 0.4);
+  box-shadow: 0 12px 36px -10px rgba(245, 130, 32, 0.2);
+}
+
+/* Extracted brand color helper utility classes */
+.text-kyzee-orange {
+  color: #F58220;
+}
+
+.bg-kyzee-orange {
+  background-color: #F58220;
+}
+
+.border-kyzee-orange {
+  border-color: #F58220;
+}
+
+.text-kyzee-navy {
+  color: #283A7C;
+}
+
+.bg-kyzee-navy {
+  background-color: #162250;
+}
+
+.glow-orange {
+  box-shadow: 0 0 25px -3px rgba(245, 130, 32, 0.45);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px -3px rgba(16, 185, 129, 0.45);
+}
+
+/* Custom dark scrollbar themed with extracted logo colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #162250;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 130, 32, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F58220;
+}

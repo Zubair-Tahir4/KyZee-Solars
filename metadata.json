@@ -1,0 +1,6 @@
+{
+  "name": "KyZee Solars",
+  "description": "Premium commercial & residential solar solutions and advanced Battery Energy Storage Systems (BESS) by KyZee Solars.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
